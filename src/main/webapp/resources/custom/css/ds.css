@@ -1,0 +1,55 @@
+@CHARSET "UTF-8";
+
+thead>tr {
+	background-color: #F5F5F5;
+}
+
+#dis-image {
+	float: right;
+	margin-top: 0px;
+	margin-right: 20px;
+}
+
+#dis-panel {
+	display: table;
+	margin-top: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	width: 50%;
+}
+
+.btn-default {
+	background-color: #F5F5F5
+}
+
+.btn-group {
+	margin-bottom: 5px;
+}
+
+.glyphicon {
+	color: #428BCA;
+}
+
+.modal-content {
+	style="overflov: auto;
+}
+
+.modal-dialog {
+	width: 60%;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+}
+
+.modal-title {
+	color: #428BCA;
+}
+
+
+
+
+
+
+
+

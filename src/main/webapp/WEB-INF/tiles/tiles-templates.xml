@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+"http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+	<definition name="base-template" template="/WEB-INF/templates/base-template.jsp">
+		<put-attribute name="title" value="Default title" />
+    <put-attribute name="header" value="Hospital online" />
+    	<put-attribute name="customTitle" value="" />
+		<put-attribute name="navigation" value="/WEB-INF/templates/navigation.jsp" />
+		<put-attribute name="content" value="" />
+		<put-attribute name="footer" value="/WEB-INF/templates/footer.jsp" />
+	</definition>
+	<definition name="welcome-template" template="/WEB-INF/templates/welcome-template.jsp">
+		<put-attribute name="title" value="Welcome" />
+		<put-attribute name="header" value="Hospital online" />
+		<put-attribute name="navigation" value="/WEB-INF/templates/navigation-welcome.jsp" />
+		<put-attribute name="content" value="" />
+		<put-attribute name="footer" value="/WEB-INF/templates/footer.jsp" />
+		<put-attribute name="modal-block" value="" />
+	</definition>
+	<definition name="message-template" template="/WEB-INF/templates/message-template.jsp">
+		<put-attribute name="title" value="Message" />
+		<put-attribute name="content" value="" />
+		<put-attribute name="footer" value="/WEB-INF/templates/footer.jsp" />
+	</definition>
+	<definition name="modal-template" template="/WEB-INF/templates/modal-template.jsp">
+	</definition>
+	
+	<definition name="symptoms" extends="base-template">
+        <put-attribute name="title" value="Symptoms" />
+        <put-attribute name="content" value="/WEB-INF/views/symptoms.jsp" />
+    </definition>
+	
+	<definition name="patient" extends="base-template">
+		<put-attribute name="title" value="Patient" />
+		<put-attribute name="content" value="/WEB-INF/views/patient.jsp" />
+	</definition>
+	
+	<definition name="patientsymptoms" extends="base-template">
+		<put-attribute name="title" value="Patient" />
+		<put-attribute name="content" value="/WEB-INF/views/patientSymptoms.jsp" />
+	</definition>
+	
+	<definition name="admin-manager" extends="base-template">
+		<put-attribute name="title" value="Manager" />
+		<put-attribute name="content" value="/WEB-INF/views/admin-manager.jsp" />
+	</definition>
+	
+	 <definition name="welcome" extends="welcome-template">
+		<put-attribute name="content" value="/WEB-INF/views/index.jsp" />
+	</definition>
+
+	<definition name="diseasedrug" extends="base-template">
+		<put-attribute name="title" value="Drugs for Disease" />
+		<put-attribute name="content" value="/WEB-INF/views/diseasedrug.jsp" />
+	</definition>
+	
+	<definition name="drugs" extends="base-template">
+		<put-attribute name="title" value="Drugs Catalog" />
+		<put-attribute name="content" value="/WEB-INF/views/drugs.jsp" />
+	</definition>
+	
+	<definition name="tests" extends="base-template">
+		<put-attribute name="title" value="Tests Log" />
+		<put-attribute name="content" value="/WEB-INF/views/tests.jsp" />
+	</definition>
+	
+	<definition name="docRecord" extends="base-template">
+		<put-attribute name="title" value="Doctor Record" />
+		<put-attribute name="content" value="/WEB-INF/views/docRecord.jsp" />
+	</definition>
+	
+	<definition name="Testd" extends="base-template">
+		<put-attribute name="title" value="Test d" />
+		<put-attribute name="content" value="/WEB-INF/views/Testd.jsp" />
+	</definition>
+	
+	<definition name="docTreatments" extends="base-template">
+		<put-attribute name="title" value="Doctor Treatments for Patient" />
+		<put-attribute name="content" value="/WEB-INF/views/docTreatments.jsp" />
+	</definition>
+	
+	<definition name="doctorMain" extends="base-template">
+		<put-attribute name="title" value="Doctor Main Page" />
+		<put-attribute name="content" value="/WEB-INF/views/doctor-main.jsp" />
+	</definition>
+		
+	<definition name="disSymptoms" extends="base-template">
+		<put-attribute name="title" value="Disease edit Symptoms" />
+		<put-attribute name="content" value="/WEB-INF/views/disSymptoms.jsp" />
+	</definition>
+	
+	<definition name="laboratory" extends="base-template">
+		<put-attribute name="title" value="Laboratory" />
+		<put-attribute name="customTitle" value="/WEB-INF/views/labTitle.jsp" />
+		<put-attribute name="content" value="/WEB-INF/views/laboratory.jsp" />
+	</definition>
+	
+	<definition name="pharmacist" extends="base-template">
+		<put-attribute name="title" value="Prescriptions" />
+		<put-attribute name="content" value="/WEB-INF/views/pharmacist.jsp" />
+	</definition>
+	<definition name="pharmacist2" extends="base-template">
+		<put-attribute name="title" value="Prescriptions" />
+		<put-attribute name="content" value="/WEB-INF/views/pharmacist2.jsp" />
+	</definition>
+	<definition name="prescription" extends="base-template">
+		<put-attribute name="title" value="Prescriptions" />
+		<put-attribute name="content" value="/WEB-INF/views/prescription.jsp" />
+	</definition>
+	<definition name="diseases" extends="base-template">
+		<put-attribute name="title" value="Diseases" />
+		<put-attribute name="content" value="/WEB-INF/views/diseases.jsp" />
+	</definition>
+	
+	<definition name="message" extends="modal-template">
+	</definition>
+	
+	<definition name="error403" extends="message-template">
+		<put-attribute name="content" value="/WEB-INF/views/error403.jsp" />
+	</definition>
+
+  <definition name="error404" extends="message-template">
+    <put-attribute name="content" value="/WEB-INF/views/error404.jsp" />
+  </definition>
+	
+	<definition name="confirmation" extends="message-template">
+		<put-attribute name="title" value="Registration confirmation" />
+		<put-attribute name="content" value="/WEB-INF/views/confirmation.jsp" />
+	</definition>
+	
+</tiles-definitions>

@@ -1,0 +1,49 @@
+            <div class="modal-header">
+		        <button type="button" class="close" ng-click="cancel()" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<div class="modal-title" style="font-size:100%;color:#428BCA;font-style:italic;">{{DrugModalTitle}}</div>
+            </div>
+            <div class="modal-body">
+					<form:form class="form-horizontal" role="form">
+						<div class="form-group">
+						    <label for="id" class="col-sm-4 control-label">Treatment ID.</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="id" ng-model="treatmentID" ng-readonly="'true'"><!--  -->
+							</div>						    							
+						</div>					
+						<div class="form-group">
+							<label for="name" class="col-sm-4 control-label">Patient</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="name" ng-model="patient" ng-readonly="'true'"><!--  -->
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="drugCategory" class="col-sm-4 control-label">{{labelCategory}} category</label>
+							<div class="col-sm-8">
+                                <select class="form-control" ng-model="drug.drugCategory" id="drugCategory" ng-options="o as o for o in Kategory" ng-disabled="{{editableInput}}"></select>
+							</div>
+						</div>
+<!-- 						<div class="form-group">
+							<label for="hazardRatio" class="col-sm-4 control-label">Hazard Ratio</label>
+							<div class="col-sm-2">
+								<input type="number" class="form-control" id="hazardRatio" ng-model="drug.hazardRatio" ng-readonly="{{editableInput}}">
+							</div>
+						</div> -->
+<!-- 						<div class="form-group">
+							<label for="dosage" class="col-sm-4 control-label">Dosage</label>
+							<div class="col-sm-2">
+								<input type="number" class="form-control" id="dosage" ng-model="drug.dosage" ng-readonly="{{editableInput}}">
+							</div>
+						</div> -->
+						<div class="form-group">
+                            <label for="description" class="col-sm-4 control-label">List</label>
+                            <div class="col-sm-8">
+                                 <textarea rows="4" cols="50" class="form-control" id="description"  ng-model="drug.description" ng-readonly="{{editableInput}}" value="uy"></textarea><!-- placeholder="type a description" -->
+                            </div>
+						</div>
+					</form:form>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-dismiss="modal" ng-click="addNewDrug()">{{ActBtn}}</button>
+                <button class="btn btn-default" data-dismiss="modal" ng-click="cancel()">Cancel</button>
+            </div>

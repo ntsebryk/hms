@@ -1,0 +1,44 @@
+<div ng-keypress="onKeyPress($event)">
+<div class="modal-header">
+  <h4 class="modal-title">Please sign in</h4>
+</div>
+<div class="modal-body">
+  <form class="form-horizontal">
+    <div ng-class="{'has-error': loginForm.isInvalid}">
+      <!-- Login -->
+      <div class="form-group">
+        <label class="col-lg-3 control-label">Login</label>
+
+        <div class="col-lg-9">
+          <input ng-model="loginForm.j_username" class="form-control" placeholder="Login" type="text" required/>
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <label class="col-lg-3 control-label">Password</label>
+
+        <div class="col-lg-9">
+          <input ng-model="loginForm.j_password" class="form-control" placeholder="Password" type="password" required/>
+          <small ng-class="loginForm.isInvalid" class="help-block" data-bv-result="INVALID">
+            {{loginForm.errorData}}
+          </small>
+        </div>
+      </div>
+    </div>
+    <!-- Check box remember me -->
+    <div class="form-group">
+      <div class="col-lg-3"></div>
+      <div class="checkbox col-lg-9">
+        <label> <input type="checkbox" ng-model="loginForm._spring_security_remember_me" /> Remember me </label>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <div class="col-lg-9 col-lg-offset-3">
+    <div class="btn btn-success" ng-click="ok()" ng-disabled="formSending" ng-enter="ok()">Sign In</div>
+    <div class="btn btn-reject" ng-click="cancel()" ng-disabled="formSending">Cancel</div>
+  </div>
+</div>
+</div>

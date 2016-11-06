@@ -1,0 +1,395 @@
+#page-wrapper {
+    background-color: #F0F0F0;
+}
+.row {
+    margin: 0;
+}
+.usersReplace {
+    background-color:#f6f6f6;
+}
+.nav-tabs > li.active > a{
+    background-color: #f5f5f6;
+    box-shadow: 0px -2px 0px #57889C;
+}
+.nav-tabs > li > a {
+    cursor:pointer;
+    padding:5px 10px 5px 10px;
+    border-radius: 2px 2px 0px 0px;
+}
+.panel {
+    border-radius: 2px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.panel-heading {
+    border-radius: 0;
+    padding: 0;
+}
+.panel-body {
+    padding: 0;
+}
+.someResponseContent .panel-body {
+    padding:0;
+}
+.middle { display:inline-block; vertical-align:middle }
+.pagination {
+    margin: 2px 0 0 0;
+}
+.someResponseContent > div > ul > li {
+    border-top: 2px;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 2px;
+    min-width:0;
+}
+#pageNumberOfNewUsers{
+    min-width:0;
+}
+#pageNumberOfNewUsers li a {
+    white-space:nowrap;
+}
+.inner-bg {
+    max-height: 100px;
+    overflow-y: hidden;
+}
+
+.profile-pic {
+    border-radius: 0px;
+    border: 5px solid #fff;
+    top: 15px;
+    text-align: right;
+    margin-top: 15px;
+}
+
+.avatarContainer {
+    padding-left: 15px;
+    padding-right: 0;
+}
+.currentDate {
+    width: 100px;
+    background-color:rgba(255,0,0,0);
+}
+.inner-bg > img, .profile-pic > img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.someResponseContent > ul {
+    margin-bottom: 0px;
+}
+
+.someResponseContent > div > div > p {
+    margin: 5px 5px 0 0;
+}
+
+.well {
+    padding:0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.well .col-sm-12 {
+    padding: 0;
+}
+.findedUserInfo {
+    margin-top:15px;
+    margin-bottom:15px;
+    margin-right:5px;
+    margin-left:5px;
+    padding-top:10px;
+    padding-bottom:10px;
+     -moz-box-shadow: 2px 0 4px #299DFF;
+    -webkit-box-shadow: 2px 0 4px #299DFF;
+    box-shadow: 0 0 4px #299DFF;
+}
+.pageInfo {
+    margin: 10px 0 0 0 ;
+}
+.searchBar {
+    margin-top:5px;
+    margin-bottom:5px;
+}
+
+.typeaheadNG {
+    width: 200px;
+}
+.ng-table {
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+}
+.ng-table td, .ng-table th{
+    border-left: 1px solid #ddd;
+}
+.ng-table td:first-child, .ng-table th:first-child {
+    border-left: 0px solid #ddd;
+}
+.ng-table th{
+    text-align: left;
+}
+.ng-table-rowselected tr input {
+    cursor: pointer;
+}
+.table > tbody > tr > td, .table > thead > tr > th {
+    padding-top     : 6px;
+    padding-bottom  :6px;
+}
+.availDocsBody .ng-table th{
+    border-top: 1px solid #ddd;
+}
+td {
+    padding: 5px 5px 5px 5px;
+}
+
+.availDocsBody {
+    padding:0;
+}
+.availDocsBody > div:first-child {
+    border-bottom: 1px solid #ddd;
+}
+.availDocsBody > div > .col-sm-4 {
+    padding-left: 20px;
+    padding-right: 10px;
+}
+.usersToAprove > .list-group-item:first-child,
+.usersToAprove > .list-group-item:last-child {
+    border-radius: 0;
+}
+.usersToAprove li {
+    border-right: 1px solid #ddd;
+    border-top: 0px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+}
+.availDocsBody > div > .col-sm-8 {
+    padding-left: 10px;
+    padding-right: 20px;
+}
+.tableDocsLoadsWrapper > .ng-table {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+.newUsersByRole {
+    background-color:#f5f5f5;
+}
+.filterCardRecords {
+    padding: 5px 8px 5px 8px;
+}
+.chartControl .input-group-addon, .chartControl .form-control,
+.searchBar .input-group-addon, .searchBar .form-control,
+.filterCardRecords .input-group-addon, .filterCardRecords .form-control {
+    border-radius: 0;
+}
+.chartControl input,
+.chartControl .input-group-addon,
+.searchBar .input-group-addon,
+.filterCardRecords .input-group-addon {
+    padding:4px 4px 4px 4px;
+}
+.chartControl input,
+.chartControl .input-group .form-control,
+.searchBar .input-group .form-control,
+.filterCardRecords .input-group .form-control {
+    width: 200px;
+}
+.chartControl .input-group .form-control.barChartSearch{
+    width:120px;
+}
+.barChartSearch > ul.dropdown-menu {
+    text-align: right;
+}
+.chartControl input,
+.searchBar input:focus,
+.filterCardRecords input:focus {
+    -moz-box-shadow: 0px 0 1px #299DFF;
+   -webkit-box-shadow: 0px 0 1px #299DFF;
+   box-shadow: 0px 0 1px #299DFF;
+}
+.chartControl input {
+    font-size: 12px;
+    height: 30px;
+}
+.charCtrlDrpDwn {
+    background-color: #70736d;
+    padding: 2px 5px 2px 5px;
+    border-radius: 0;
+}
+.faButton,
+.addNewUserWithRole {
+    cursor:pointer;
+}
+.table-curved {
+    border: solid #ccc 1px;
+    border-radius: 4px;
+    /*table-layout: fixed;*/
+}
+.txt-color-darken {
+    color: #404040 !important;
+}
+.txt-color-blue {
+    color: #3276B1;
+}
+.usersChart {
+    padding: 5px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+}
+.table-curved tr:last-child td {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+#page-wrapper {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.tooltip-inner {
+    border: solid 0px #ccc;
+    font-size: 14px;
+}
+
+.pagination-centered {
+    text-align: center;
+}
+
+td {
+    overflow: hidden;
+    text-overflow: clip;
+    white-space: nowrap;
+}
+.crCheckBox label {
+    margin: 0;
+    cursor:pointer;
+}
+
+/*Custom Radio Buttons and Checkboxes using Font Awesome*/
+
+.crCheckBox input[type='checkbox'] {
+    display: none;
+    padding: 0;
+    margin:0;
+}
+.crCheckBox input[type='checkbox'] + label:before {
+    display: inline-block;
+    vertical-align:middle;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding-right: 0px;
+}
+.crCheckBox input[type="checkbox"]:checked + label:before {
+    padding-right: 0px;
+}
+.crCheckBox input[type="checkbox"] + label:before {
+    content: "";
+    display: inline-block;
+    position: relative;
+    width: 19px;
+    height: 19px;
+    top: -1px;
+    left: 1px;
+    border: 1px solid #cccccc;
+    border-radius: 0px;
+    background-color: #fff;
+}
+.crCheckBox input[type="checkbox"]:checked + label:before {
+    content: "\f00c";
+    border-radius: 0px;
+    border: 1px solid #428bca;
+    color: #428bca;
+}
+.crCheckBox input[type="checkbox"]:checked:hover + label:before {
+    content: "\f00d";
+    border-radius: 0px;
+    border: 1px solid #428bca;
+    color: #428bca;
+}
+.showModalBtn {
+    padding:2px 5px 2px 5px;
+}
+.showModalBtn, .showModalBtn:hover, .showModalBtn[disabled]{
+    background:none;
+    border:none;
+    box-shadow:none;
+}
+.showModalBtn, .showModalBtn:hover {
+    color:#299DFF;
+}
+.showModalBtn[disabled] {
+    color:#4d4d4d;
+}
+
+.tabBtn {
+    padding:5px 15px 5px 15px;
+    border-radius: 0;
+    color:#4d4d4d;
+    font-weight: 400;
+}
+.tabBtn.active {
+    background:none;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    box-shadow: 0px -2px 0px #57889C; 
+    font-weight: bold;
+}
+.tabBtn, .tabBtn:hover, .tabBtn[disabled]{
+    background:none;
+    border:none;
+    box-shadow:none;
+}
+.tabBtn[disabled] {
+    color:#4d4d4d;
+}
+.changeAvatar {
+    border: 1px solid #f6f6f6;
+    text-align: right;
+}
+.chartPanel > div,
+.chartPanel > div > div > div,
+.cardRecordsPanHead > div,
+.cardRecordsPanHead > div > div > div{
+    padding-left:0px;
+    padding-right:0px;
+}
+.chartPanel .hTitle {
+    padding: 5px 5px 5px 5px;
+}
+.selectedDis {
+    margin-top: 10px;
+}
+.selectedDis .btn {
+    padding: 0px 5px 0px 5px;
+
+}
+.chartRendered {
+    padding: 10px 5px 10px 5px;
+    border: 1px solid #fafafa;
+}
+.chartControl {
+    padding: 20px 10px 20px 10px;
+}
+.newUsersByRole:hover {
+    background-color:#dddddd;
+}
+.im-centered {
+    margin: auto;
+    text-align: center;
+}
+.im-righted {
+    margin-right: auto;
+    text-align: right;
+}
+.nvd3 {
+    margin-left: auto;
+    text-align: left;
+}
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+.allCards {
+
+}

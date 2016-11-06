@@ -1,0 +1,159 @@
+@CHARSET "UTF-8";
+
+* {
+	box-sizing: content-box;
+}
+
+select {
+	height: 130%
+}
+
+#new-app {
+	vertical-align: middle;
+}
+
+.runjunjovyi-tooltip {
+	border: 1px #FFB266;
+}
+
+.runjunjovyi-tooltip+.tooltip>.tooltip-inner {
+	max-width: 600px;
+	height: 500px;
+	background-color: #E0E0E0;
+	color: #000000;
+	white-space: pre-wrap;
+	text-align: left;
+	border: 1px #FFB266;
+}
+
+.runjunjovyi-tooltip+.tooltip>.tooltip-inner p {
+	text-indent: 1.5em;
+	margin-top: 0;
+	margin-bottom: -5px;
+}
+
+.runjunjovyi-tooltip+.tooltip>.tooltip-inner ul {
+	text-indent: 1.5em;
+	margin-top: -20px;
+	margin-bottom: -20px;
+}
+
+.runjunjovyi-tooltip+.tooltip>.tooltip-inner ul li{
+	text-indent: 1.5em;
+	margin-top: -5px;
+	margin-bottom: -5px;
+}
+
+
+.descr {
+	color: #428BCA;
+}
+
+.container {
+	display: block;
+	margin-left: 30px;
+}
+
+.lablogo {
+	margin-left: 25%;
+	margin-right: auto;
+}
+
+.modal-head {
+	color: #428BCA;
+}
+
+.notif {
+	border: 1px solid #FFB266;
+	background-color: #FFCC99;
+	text-align: center;
+	width: 20%;
+	font-size: 10px;
+	border-radius: 15px;
+	margin-top: -8px;
+	margin-left: 8px
+}
+
+.nav, .pagination, .carousel, .panel-title a {
+	cursor: pointer;
+}
+
+.ng-table th {
+	text-align: left;
+	font-style: italic;
+}
+
+.panel-header-text {
+	color: #428BCA;
+}
+
+.panelN {
+	margin-right: 0;
+	float: left;
+}
+
+.picplus {
+	color: #428BCA;
+	margin-left: 60%;
+}
+
+.row .step {
+	margin-top: 25px;
+	margin-bottom: 25px;
+	margin-right: 0;
+	margin-left: 0;
+}
+
+.table>tbody>tr>td {
+	vertical-align: middle;
+}
+
+.table-data {
+	white-space: pre; /* CSS 2.0 */
+	white-space: pre-wrap; /* CSS 2.1 */
+	white-space: pre-line; /* CSS 3.0 */
+	white-space: -pre-wrap; /* Opera 4-6 */
+	white-space: -o-pre-wrap; /* Opera 7 */
+	white-space: -moz-pre-wrap; /* Mozilla */
+	white-space: -hp-pre-wrap; /* HP Printers */
+	word-wrap: break-word; /* IE 5+ */
+}
+
+.total-rows-div {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+	border-radius: 5px;
+}
+
+.step .pan {
+	background-color: #F5F5F5;
+	border: 1px solid #E0E0E0;
+	border-right: none;
+	font-size: 12px;
+	text-align: right;
+	padding-left: 0;
+}
+
+.step .pan:last-child {
+	border: 1px solid #E0E0E0;
+}
+
+.step .pan:first-child {
+	border-radius: 5px 0 0 5px;
+}
+
+.step .pan:last-child {
+	border-radius: 0 5px 5px 0;
+}
+
+.step .pan:hover {
+	color: #428BCA;
+	cursor: pointer;
+}
+
+.step .fa {
+	padding-top: 10;
+	font-size: 15px;
+	color: #428BCA;
+}

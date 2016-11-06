@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+	<import resource="datasource-config.xml" />
+	<import resource="security.xml" />
+	<import resource="mvc-core-config.xml" />
+
+	<context:property-placeholder location="classpath:spring/application.properties" system-properties-mode="OVERRIDE" />
+
+	<context:component-scan base-package="com.softserve.edu.service" />
+	<context:component-scan base-package="com.softserve.edu.util" />
+
+	<tx:annotation-driven />
+
+	<beans profile="spring-data-jpa">
+		<!-- JPA EntityManagerFactory -->
+		<bean id="entityManagerFactory"
+			class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
+			p:dataSource-ref="dataSource">
+			<property name="jpaVendorAdapter">
+				<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"
+					p:database="${jpa.database}" p:showSql="${jpa.showSql}" />
+			</property>
+			<property name="persistenceUnitName" value="hospital" />
+			<property name="packagesToScan" value="com.softserve.edu" />
+			<property name="jpaProperties">
+				<props>
+					<prop key="hibernate.hbm2ddl.auto">update</prop>
+					<prop key="hibernate.hbm2ddl.import_files">classpath:sqlScripts/hospital_25.10.2014.sql</prop>
+				</props>
+			</property>
+		</bean>
+
+		<bean id="systemPropertiesLoader"
+			class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+			<property name="targetObject" value="#{@systemProperties}" />
+			<property name="targetMethod" value="putAll" />
+			<property name="arguments">
+				<util:properties location="classpath:spring/application.properties" />
+			</property>
+		</bean>
+
+		<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"
+			p:entityManagerFactory-ref="entityManagerFactory" />
+
+		<bean class="com.mysql.jdbc.AbandonedConnectionCleanupThread"
+			destroy-method="shutdown" />
+	</beans>
+
+	<beans profile="spring-data-jpa">
+		<jpa:repositories base-package="com.softserve.edu.repository" />
+	</beans>
+</beans>

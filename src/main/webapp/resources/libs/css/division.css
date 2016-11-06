@@ -1,0 +1,119 @@
+.row {
+    margin: 0;
+}
+.panel-heading {
+    border-radius: 3px 3px 0px 0px;
+}
+.someResponseContent .panel-body {
+    padding:0;
+}
+.pagination {
+    margin: 2px 0 0 0;
+}
+.someResponseContent > div > ul > li {
+    border-top: 2px;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 2px;
+    min-width:0;
+}
+#pageNumberOfNewUsers{
+    min-width:0;
+}
+#pageNumberOfNewUsers li a {
+    white-space:nowrap;
+}
+.inner-bg {
+    max-height: 100px;
+    overflow-y: hidden;
+}
+
+.profile-pic {
+    border-radius: 0px;
+    border: 5px solid #fff;
+    top: -15px;
+    text-align: right;
+    margin-top: -15px;
+}
+
+.avatarContainer {
+    padding-left: 15px;
+    padding-right: 0;
+}
+
+.inner-bg > img, .profile-pic > img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.someResponseContent > ul {
+    margin-bottom: 0px;
+}
+
+.someResponseContent > div > div > p {
+    margin: 5px 5px 0 0;
+}
+
+.well {
+    padding:0;
+}
+.well .col-sm-12 {
+    padding: 0;
+}
+.findedUserInfo {
+    margin-top:20px;
+    margin-bottom:20px;
+    padding-top:5px;
+    padding-bottom:5px;
+     -moz-box-shadow: 2px 0 4px #299DFF;
+    -webkit-box-shadow: 2px 0 4px #299DFF;
+    box-shadow: 2px 0 4px #299DFF;
+}
+.table-curved {
+    border: solid #ccc 1px;
+    border-radius: 4px;
+    /*table-layout: fixed;*/
+}
+.usersChart {
+    padding: 5px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+}
+.table-curved tr:last-child td {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+#page-wrapper {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.tooltip-inner {
+    border: solid 0px #ccc;
+    font-size: 14px;
+}
+
+.pagination-centered {
+    text-align: center;
+}
+td {
+    overflow: hidden;
+    text-overflow: clip;
+    white-space: nowrap;
+}
+.im-centered {
+    margin: auto;
+    text-align: center;
+}
+.im-righted {
+    margin-right: auto;
+    text-align: right;
+}
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+.allCards {
+
+}

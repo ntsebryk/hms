@@ -1,0 +1,50 @@
+<div ng-controller="ddTableCtrl">
+    <!--<p><strong>Page:</strong> {{tableParams.page()}}</p>-->
+    <!--<p><strong>Count per page:</strong> {{tableParams.count()}}</p>-->
+    <!--<p><strong>Sorting:</strong> {{tableParams.sorting()|json}}-->
+    <!--<p><strong>Filter:</strong> {{tableParams.filter()|json}}-->
+    <!--<p><strong>Selected:</strong> {{selected|json}}-->
+    <!--<p><strong>Checked:</strong> {{onlychecked|json}}-->
+    <!--<button ng-click="getChecked()">Click</button>-->
+    <!--<button ng-click="deleteDrugs()">Delete</button>-->
+         <!--<button ng-click="open()">Open</button>-->
+    <!--<button ng-click="checkDD()">Check</button>-->
+    <div class="btn-group" style="float: left; clear: left; padding-top: 0px;">
+        <button class="btn btn-default btn-sm" id="remove-data" style="background-color: #F5F5F5" ng-click="deleteDrugs()">
+            <span class="glyphicon glyphicon-minus-sign" style="color: #428BCA;" ></span>
+        </button>
+        <button class="btn btn-default btn-sm" id="add-data" style="background-color: #F5F5F5" ng-click="open()">
+            <span class="glyphicon glyphicon-plus-sign" style="color: #428BCA;"></span>
+        </button>
+
+    </div>
+
+    <div class="col-lg-6"
+         style="float: right; padding-right: 0px; width: 17%">
+        <div class="input-group">
+            <input type="text" class="form-control input-sm" id="search-area"  ng-model="filter.$" >
+            <span class="input-group-addon">Search</span>
+        </div>
+        <!-- /input-group -->
+    </div>
+    <div style="height: 15px; clear: both"></div>
+
+
+    <!--<p>Filter: <input class="form-control" type="text" ng-model="filter.$" /></p>-->
+    <table ng-table="tableParams" show-filter="true" class="table">
+        <tr ng-repeat="disDrug in $data">
+            <td> <input type="checkbox" ng-model="selected[disDrug.id]" /> </td>
+            <!--<td data-title="'ID'">{{disDrug.id}}</td>-->
+            <td data-title="'Drug name'" sortable="'drug.name'" >{{disDrug.drug.name}}</td>
+            <td data-title="'Description'" >{{disDrug.drug.description}}</td>
+            <td data-title="'Efficiency'" sortable="'drugEfficiencyRatio'">{{disDrug.drugEfficiencyRatio}}</td>
+            <td data-title="'Amount'" sortable="'drugAmount'">{{disDrug.drugAmount}}</td>
+        </tr>
+    </table>
+
+    <div class="col-lg-4">
+        <div class="bottomtext">
+            <i><strong>{{data.length}} </strong> rows found<i>
+        </div>
+    </div>
+</div>

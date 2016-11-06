@@ -1,0 +1,186 @@
+#page-wrapper {
+    background-color: #F0F0F0;
+}
+.row {
+    margin: 0;
+}
+.nav-tabs > li > a {
+    cursor:pointer;
+    padding:5px 10px 5px 10px;
+}
+.panel {
+    border-radius: 2px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.panel-heading {
+    border-radius: 0;
+    padding: 5px 10px 5px 10px;
+}
+.panel-body {
+    padding: 0;
+}
+.someResponseContent .panel-body {
+    padding:0;
+}
+.pagination {
+    margin: 2px 0 0 0;
+}
+.someResponseContent > div > ul > li {
+    border-top: 2px;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 2px;
+    min-width:0;
+}
+#pageNumberOfNewUsers{
+    min-width:0;
+}
+#pageNumberOfNewUsers li a {
+    white-space:nowrap;
+}
+.inner-bg {
+    max-height: 100px;
+    overflow-y: hidden;
+}
+
+.profile-pic {
+    border-radius: 0px;
+    top: 15px;
+    text-align: right;
+    margin-top: 15px;
+}
+
+.profile-pic-chg {
+    top: 15px;
+    text-align: right;
+    margin-top: 15px;
+    margin-right: 10px;
+    font-size: small;
+}
+
+.avatarContainer {
+    padding-left: 15px;
+    padding-right: 0;
+}
+.currentDate {
+    width: 100px;
+    background-color:rgba(255,0,0,0);
+}
+.inner-bg > img, .profile-pic > img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.someResponseContent > ul {
+    margin-bottom: 0px;
+}
+
+.someResponseContent > div > div > p {
+    margin: 5px 5px 0 0;
+}
+
+.well {
+    padding:0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.well .col-sm-12 {
+    padding: 0;
+}
+.findedUserInfo {
+    margin-top:15px;
+    margin-bottom:15px;
+    margin-right:5px;
+    margin-left:5px;
+    padding-top:10px;
+    padding-bottom:10px;
+     -moz-box-shadow: 2px 0 4px #299DFF;
+    -webkit-box-shadow: 2px 0 4px #299DFF;
+    box-shadow: 0 0 4px #299DFF;
+}
+.pageInfo {
+    margin: 10px 0 0 0 ;
+}
+.searchBar {
+    margin-top:5px;
+    margin-bottom:5px;
+}
+
+.typeaheadNG {
+    width: 200px;
+}
+.ng-table {
+    border-bottom: 1px solid #ddd;
+}
+.ng-table td, .ng-table th{
+    border-left: 1px solid #ddd;
+}
+.ng-table td:first-child, .ng-table th:first-child {
+    border-left: 0px solid #ddd;
+}
+.ng-table th{
+    text-align: left;
+}
+.ng-table tr.healed td {
+    background-color: #DDD;
+    font-weight: bold;
+}
+.ng-table-rowselected tr {
+    cursor: pointer;
+}
+td {
+    padding: 5px 5px 5px 5px;
+}
+.table-curved {
+    border: solid #ccc 1px;
+    border-radius: 4px;
+    /*table-layout: fixed;*/
+}
+.txt-color-darken {
+    color: #404040 !important;
+}
+.txt-color-blue {
+    color: #3276B1;
+}
+.usersChart {
+    padding: 5px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+}
+.table-curved tr:last-child td {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+#page-wrapper {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.tooltip-inner {
+    border: solid 0px #ccc;
+    font-size: 14px;
+}
+
+.pagination-centered {
+    text-align: center;
+}
+td {
+    overflow: hidden;
+    text-overflow: clip;
+    white-space: nowrap;
+}
+.im-centered {
+    margin: auto;
+    text-align: center;
+}
+.im-righted {
+    margin-right: auto;
+    text-align: right;
+}
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+}

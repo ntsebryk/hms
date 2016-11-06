@@ -1,0 +1,31 @@
+<div class="modal-header">
+	<button type="button" class="close" ng-click="cancel()">
+		<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+	</button>
+	<h3 class="modal-title">Drugs in patient <u>{{patientName}}'s</u> prescription</h3>
+</div>
+<div class="modal-body modal-body-custom">
+	<div class="row table-header">
+		<div class="col-md-1">
+	      	<input type="checkbox" style="margin-top: 10px" ng-model="checkAll" ng-click="checkItAll(checkAll)">
+  		</div>
+  		<div class="col-md-3"><p class="text-center">Drug</p></div>
+		<div class="col-md-4"><p class="text-center">Description</p></div>
+		<div class="col-md-2"><p class="text-center">Category</p></div>
+		<div class="col-md-2"><p class="text-center">Check out date</p></div>
+	</div>
+	<div class="row" ng-repeat="drug in drugs" ng-class="{info: drug.checkOutDate}">
+		<div class="col-md-1">
+			<input type="checkbox" style="margin-top: 10px" ng-model="drug.drugState" ng-true-value="'GIVEDOUT'" ng-show="drug.checkOutDate == null"
+				ng-click="activateButton(drug.drugState)">
+  		</div>
+		<div class="col-md-3"><p class="text-center">{{drug.drug.name}}</p></div>
+		<div class="col-md-4"><p class="text-center" style="text-align: left;">{{drug.description}}</p></div>
+		<div class="col-md-2"><p class="text-center">{{drug.drug.drugCategory}}</p></div>
+		<div class="col-md-2"><p class="text-center">{{drug.checkOutDate}}</p></div>
+	</div>
+</div>
+<div class="modal-footer">
+	<button type="button" class="btn btn-primary" ng-modal="checkDrug" ng-disabled="allowToGiveOut" ng-click="ok()">Give out</button>
+	<button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+</div>

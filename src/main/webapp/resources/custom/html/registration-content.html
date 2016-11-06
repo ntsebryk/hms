@@ -1,0 +1,180 @@
+<div ng-keypress="onKeyPress($event)">
+<div class="modal-header">
+  <h4 class="modal-title" ng-show="isPatient">Fill in the registration form.</h4>
+  <h4 class="modal-title" ng-show="!isPatient">Fill in the registration form for {{role}}.</p></h4>
+</div>
+<div class="modal-body">
+  <form name="regForm" class="form-horizontal">
+
+    <!-- Full Name -->
+    <div class="form-group has-feedback"
+         ng-class="{'has-error': regForm.fullName.$dirty && regForm.fullName.$invalid, 'has-success': regForm.fullName.$dirty && regForm.fullName.$valid}">
+      <label class="col-lg-4 control-label">Full Name</label>
+
+      <div class="col-lg-8">
+        <input name="fullName" ng-model="registrationForm.fullName" ng-maxlength=100 class="form-control"
+               placeholder="Full Name" type="text" required/>
+        <i class="form-control-feedback glyphicon"
+           ng-class="{'glyphicon-remove': regForm.fullName.$dirty && regForm.fullName.$invalid, 'glyphicon-ok': regForm.fullName.$dirty && regForm.fullName.$valid}"></i>
+      </div>
+      <div class="col-lg-offset-4 help-block" ng-show="regForm.fullName.$dirty && regForm.fullName.$invalid">
+        <small ng-show="regForm.fullName.$error.required">The fied is required<br></small>
+        <small ng-show="regForm.fullName.$error.maxlength">The field exceeds max lenght</small>
+      </div>
+    </div>
+
+    <!-- Login -->
+    <div class="form-group has-feedback" ng-if="isPatient"
+         ng-class="{'has-error': regForm.login.$dirty && regForm.login.$invalid, 'has-success': regForm.login.$dirty && regForm.login.$valid}">
+      <label class="col-lg-4 control-label">Login</label>
+
+      <div class="col-lg-8">
+        <input name="login" ng-model="registrationForm.login" class="form-control" placeholder="Login" type="text" required/>
+        <i class="form-control-feedback glyphicon"
+           ng-class="{'glyphicon-remove': regForm.login.$dirty && regForm.login.$invalid, 'glyphicon-ok': regForm.login.$dirty && regForm.login.$valid}"></i>
+      </div>
+      <div class="col-lg-offset-4 help-block" ng-show="regForm.login.$dirty && regForm.login.$invalid">
+        <small ng-show="regForm.login.$error.required">The fied is required</small>
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div class="form-group has-feedback"
+         ng-class="{'has-error': regForm.email.$dirty && regForm.email.$invalid, 'has-success': regForm.email.$dirty && regForm.email.$valid}">
+      <label class="col-lg-4 control-label">Email</label>
+
+      <div class="col-lg-8">
+        <input name="email" ng-model="registrationForm.email" class="form-control inputEmail" id="inputEmail"
+               placeholder="Email" required ng-minlength=3 ng-maxlength=30 ng-pattern="/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/" />
+        <i class="form-control-feedback glyphicon"
+           ng-class="{'glyphicon-remove': regForm.email.$dirty && regForm.email.$invalid, 'glyphicon-ok': regForm.email.$dirty && regForm.email.$valid}"></i>
+      </div>
+      <div class="col-lg-offset-4 help-block" ng-show="regForm.email.$dirty && regForm.email.$invalid">
+        <small ng-show="regForm.email.$error.required">The fied is required<br></small>
+        <small ng-show="regForm.email.$error.minlength">Your email is required to be at least 3 characters<br></small>
+        <small ng-show="regForm.email.$error.maxlength">Your email cannot be longer than 30 characters<br></small>
+        <small ng-show="regForm.email.$error.pattern">That is not a valid email. Please input a valid email</small>
+      </div>
+    </div>
+
+    <!-- Password -->
+    <div class="form-group has-feedback" ng-if="isPatient"
+         ng-class="{'has-error': regForm.pass.$dirty && regForm.pass.$invalid, 'has-success': regForm.pass.$dirty && regForm.pass.$valid}">
+      <label class="col-lg-4 control-label">Password</label>
+
+      <div class="col-lg-8">
+        <input name="pass" ng-model="registrationForm.pass" class="form-control" placeholder="Password" type="password" ng-change="onPassChanged()" required/>
+        <i class="form-control-feedback glyphicon"
+           ng-class="{'glyphicon-remove': regForm.pass.$dirty && regForm.pass.$invalid, 'glyphicon-ok': regForm.pass.$dirty && regForm.pass.$valid}"></i>
+      </div>
+      <div class="col-lg-offset-4 help-block" ng-show="regForm.pass.$dirty && regForm.pass.$invalid">
+        <small ng-show="regForm.pass.$error.required">The fied is required</small>
+      </div>
+    </div>
+
+    <div class="form-group has-feedback" ng-if="isPatient"
+         ng-class="{'has-error': regForm.passwordRetype.$dirty && regForm.passwordRetype.$invalid, 'has-success': regForm.passwordRetype.$dirty && regForm.passwordRetype.$valid}">
+      <label class="col-lg-4 control-label">Retype password</label>
+
+      <div class="col-lg-8">
+        <input name="passwordRetype" ng-model="passwordRetype" class="form-control" placeholder="Repeat Password" type="password" password-verify="registrationForm.pass" required/>
+        <i class="form-control-feedback glyphicon"
+           ng-class="{'glyphicon-remove': regForm.passwordRetype.$dirty && regForm.passwordRetype.$invalid, 'glyphicon-ok': regForm.passwordRetype.$dirty && regForm.passwordRetype.$valid}"></i>
+      </div>
+      <div class="col-lg-offset-4 help-block"
+           ng-show="regForm.passwordRetype.$dirty && regForm.passwordRetype.$invalid">
+        <small ng-show="regForm.passwordRetype.$error.passwordVerify">Password and it retype are not the same</small>
+      </div>
+    </div>
+
+    <!-- Gender -->
+    <div class="form-group has-feedback"
+         ng-class="{'has-error': regForm.gender.$dirty && regForm.gender.$invalid, 'has-success': regForm.gender.$dirty && regForm.gender.$valid}">
+      <label class="col-lg-4 control-label">Gender</label>
+
+      <div class="col-lg-8">
+        <select name="gender" ng-model="registrationForm.idGender" class="form-control dropdown" required>
+          <option value="1">MALE</option>
+          <option value="2">FEMALE</option>
+        </select>
+      </div>
+      <div class="col-lg-offset-4 help-block" ng-show="regForm.gender.$dirty && regForm.gender.$invalid">
+        <small ng-show="regForm.gender.$error.required">The fied is required</small>
+      </div>
+    </div>
+
+    <!-- Birthday -->
+    <div class="form-group has-feedback"
+         ng-class="{'has-error': regForm.birthday.$dirty && regForm.birthday.$invalid, 'has-success': regForm.birthday.$dirty && regForm.birthday.$valid}">
+      <label class="col-lg-4 control-label">Birthday</label>
+
+      <div class="col-lg-8">
+        <div class="input-group">
+          <input name="birthday" readonly type="text" class="form-control"
+                 datepicker-popup="{{dateSettings.format}}" is-open="dateSettings.opened"
+                 ng-model="registrationForm.birthday" datepicker-options="dateSettings.options"
+                 ng-required="true" close-text="Close" max-date="registrationForm.birthday" required/>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="dateSettings.open($event)">
+                  <i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phone -->
+    <div class="form-group has-feedback"
+         ng-class="{'has-error': regForm.phone.$dirty && regForm.phone.$invalid, 'has-success': regForm.phone.$dirty && regForm.phone.$valid}">
+      <label class="col-lg-4 control-label">Phone</label>
+
+      <div class="col-lg-8">
+        <input name="phone" ng-model="registrationForm.phone" class="form-control" placeholder="Phone Number" type="text" required/>
+        <i class="form-control-feedback glyphicon"
+           ng-class="{'glyphicon-remove': regForm.phone.$dirty && regForm.phone.$invalid, 'glyphicon-ok': regForm.phone.$dirty && regForm.phone.$valid}"></i>
+      </div>
+      <div class="col-lg-offset-4 help-block" ng-show="regForm.phone.$dirty && regForm.phone.$invalid">
+        <small ng-show="regForm.phone.$error.required">The fied is required</small>
+      </div>
+    </div>
+
+    <!-- Department -->
+    <div class="form-group has-feedback" ng-if="!isPatient"
+         ng-class="{'has-error': regForm.department.$dirty && regForm.department.$invalid, 'has-success': regForm.department.$dirty && regForm.department.$valid}">
+      <label class="col-lg-4 control-label">Department</label>
+
+      <div class="col-lg-8">
+        <select name="gender" ng-model="registrationForm.idDepartment" class="form-control dropdown" required>
+          <option ng-repeat="dep in departments" value="{{dep.id}}">{{dep.name}}</option>
+        </select>
+      </div>
+      <div class="col-lg-offset-4 help-block" ng-show="regForm.department.$dirty && regForm.department.$invalid">
+        <small ng-show="regForm.department.$error.required">The fied is required</small>
+      </div>
+    </div>
+
+    <!-- Adress -->
+    <div class="form-group has-feedback"
+         ng-class="{'has-error': regForm.adress.$dirty && regForm.adress.$invalid, 'has-success': regForm.adress.$dirty && regForm.adress.$valid}">
+      <label class="col-lg-4 control-label">Adress</label>
+
+      <div class="col-lg-8">
+        <textarea name="adress" ng-model="registrationForm.adress" class="form-control" rows="3"
+                  required></textarea>
+        <i class="form-control-feedback glyphicon"
+           ng-class="{'glyphicon-remove': regForm.adress.$dirty && regForm.adress.$invalid, 'glyphicon-ok': regForm.adress.$dirty && regForm.adress.$valid}"></i>
+      </div>
+      <div class="col-lg-offset-4 help-block" ng-show="regForm.adress.$dirty && regForm.adress.$invalid">
+        <small ng-show="regForm.adress.$error.required">The fied is required</small>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <div class="form-group">
+    <div class="col-lg-8 col-lg-offset-3">
+      <div class="btn btn-primary" ng-disabled="regForm.$invalid || formSending" ng-click="ok()">Send request</div>
+      <div class="btn btn-reject" ng-click="cancel()" ng-disabled="formSending">Cancel</div>
+    </div>
+  </div>
+</div>
+</div>

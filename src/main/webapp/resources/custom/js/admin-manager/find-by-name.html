@@ -1,0 +1,93 @@
+<div class="row searchBar">
+	<div class="col-sm-6">
+		<div class="input-group">
+			<span class="input-group-addon"><i class="fa fa-search fa-fw"></i></span>
+			<input  type="text"
+					ng-model="finded"
+					placeholder="Search by ..."
+					typeahead="user.fullName for user in getUsers($viewValue)"
+					typeahead-loading="loadingUsers"
+					typeahead-on-select='onSelect($item, $model, $label)'
+					class="form-control input-sm typeaheadNG">
+			<i ng-show="loadingUsers" class="glyphicon glyphicon-refresh"></i>
+		</div>
+	</div>
+	<div class="col-sm-6 im-righted">
+		<span ng-click="open(md)" class="fa fa-plus-circle fa-2x fa-fw text-info addNewUserWithRole"></span>
+	</div>
+</div>
+<div class="well findedUserInfo" ng-show="findedUser" type="info" close="closeWell()">
+	<div class="row">
+		<div class="col-sm-11 vcenter">
+			<div class="row">
+				<div class="col-md-2">
+					<img class="pull-left" ng-src="/hospital/resources/custom/images/admin-manager/{{findedUser.gender}}.png" width="48" height="48" />
+				</div>
+				<div class="col-md-10">
+					<div class="row">
+						<div class="col-md-6">
+							<b>{{findedUser.fullName}}</b>
+						</div>
+						<div class="col-md-4">
+							{{findedUser.login}}
+						</div>
+						<div class="col-md-2 pull-right">
+							<div class="btn-group btn-group-xs dropdown">
+								<button class="btn btn-default pickExplicitly" type="button" data-toggle="dropdown">
+									<span class="fa fa-gears"></span>
+								</button>
+								<ul id="approoveOptsList" role="menu" class="dropdown-menu pull-middle">
+									<li role="presentation"><a href="#"><span class="fa fa-check">Aproove</span></a></li>
+									<li role="presentation"><a href="#"><span class="fa fa-close">Reject</span></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-8" style="font-size:11px">
+							<span class="fa fa-home" ></span> {{findedUser.adress}}
+						</div>
+						<div class="cold-md-4" style="font-size:11px">
+							<span class="glyphicon glyphicon-calendar" ></span> {{findedUser.birthday | date:'mediumDate'}}
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-8" style="font-size:11px">
+							<span class="fa fa-envelope" ></span> {{findedUser.email}}
+						</div>
+						<div class="cold-md-4" style="font-size:11px">
+							<span class="glyphicon glyphicon-phone" ></span> {{findedUser.phone}}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-2">
+				</div>
+				<div class="col-sm-10">
+					<button class="btn btn-xs"
+							ng-class="{'btn-primary':thisRoles.patient.assigned && thisRoles.patient.status == 'APPROVED','btn-warning':thisRoles.patient.assigned && thisRoles.patient.status == 'PENDING' ,'btn-danger':thisRoles.patient.assigned && thisRoles.patient.status == 'REJECTED'}"
+							ng-disabled="!thisRoles.patient.assigned && rolesCount > 1"
+							ng-click="setRoleForUser(findedUser,'patient')">Patient</button>
+					<button class="btn btn-xs"
+							ng-class="{'btn-primary':thisRoles.doctor.assigned && thisRoles.doctor.status == 'APPROVED','btn-warning':thisRoles.doctor.assigned && thisRoles.doctor.status == 'PENDING','btn-danger':thisRoles.doctor.assigned && thisRoles.doctor.status == 'REJECTED'}"
+							ng-disabled="!thisRoles.doctor.assigned && rolesCount > 1"
+							ng-click="setRoleForUser(findedUser,'doctor')">Doctor</button>
+					<button class="btn btn-xs"
+							ng-class="{'btn-primary':thisRoles.labmanager.assigned && thisRoles.labmanager.status == 'APPROVED','btn-warning':thisRoles.labmanager.assigned && thisRoles.labmanager.status == 'PENDING','btn-danger':thisRoles.labmanager.assigned && thisRoles.labmanager.status == 'REJECTED'}"
+							ng-disabled="!thisRoles.labmanager.assigned && rolesCount > 1"
+							ng-click="setRoleForUser(findedUser,'labmanager')">Labmanager</button>
+					<button class="btn btn-xs"
+							ng-class="{'btn-primary':thisRoles.pharmacist.assigned && thisRoles.pharmacist.status == 'APPROVED','btn-warning':thisRoles.pharmacist.assigned && thisRoles.pharmacist.status == 'PENDING','btn-danger':thisRoles.pharmacist.assigned && thisRoles.pharmacist.status == 'REJECTED'}"
+							ng-disabled="!thisRoles.pharmacist.assigned && rolesCount > 1"
+							ng-click="setRoleForUser(findedUser,'pharmacist')">Pharmacist</button>
+				</div>
+			</div>
+		</div><!--
+		--><div class="col-sm-1 vcenter">
+			<button class="close" type="button" ng-click="closeWell()">
+				<span class="fa fa-close"></span>
+			</button>
+		</div>
+	</div>
+</div>

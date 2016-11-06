@@ -1,0 +1,75 @@
+<div ng-controller="PrescriptionCtrl">
+	
+	<div ng-show="filteredPrescriptions.length == 0">
+		<p class="bg-danger">Select patient or doctor to view all matching to appropriate user prescriptions</p>
+	</div>
+	
+	<div ng-hide="filteredPrescriptions.length == 0">
+		
+<!-- 		Upper row with patient and doctor information -->
+		<div class="row">
+			<div class="col-md-5" ng-show="filteredPrescriptions[0].patient.gender == 'MALE'">
+				<img alt="female" src="resources/custom/images/MALE.png">
+			</div>
+			<div class="col-md-5" ng-show="filteredPrescriptions[0].patient.gender == 'FEMALE'">
+				<img alt="female" src="resources/custom/images/FEMALE.png">
+			</div>
+			<div class="col-md-7">
+				<address>
+				  	<strong>{{filteredPrescriptions[0].patient.fullName}}</strong><br>
+				  	<i class="fa fa-tty" style="margin-right: 10px;"></i>{{filteredPrescriptions[0].patient.phone}}<br>
+				  	<i class="fa fa-at" style="margin-right: 10px;"></i><a href="">{{filteredPrescriptions[0].patient.email}}</a>
+				</address>
+			
+				<address>
+				 	<strong>{{filteredPrescriptions[0].doctor.fullName}}</strong><br>
+				  	<i class="fa fa-at" style="margin-right: 10px;"></i><a href="">{{filteredPrescriptions[0].doctor.email}}</a>
+				</address>
+			</div>
+		</div>
+
+<!-- 		Lower row with list of presription according selected criteria -->
+		<div>
+			<div class="row table-header">
+				<div class="col-md-1"><p class="text-center"><strong>Id</strong></p></div>
+				<div class="col-md-3"><p class="text-center"><strong>Patient</strong></p></div>
+				<div class="col-md-3"><p class="text-center"><strong>Doctor</strong></p></div>
+				<div class="col-md-5">
+					<div class="row">
+						<div class="col-md-6"><p class="text-center"><strong>Prescribed</strong></p></div>
+						<div class="col-md-6"><p class="text-center"><strong>Give out</strong></p></div>
+					</div>	
+				</div>		
+			</div>
+			<div class="row table-body-row" ng-repeat="prescription in filteredPrescriptions"
+				ng-class="{success: prescription.prescriptionState == 'DELIVERED'}">
+				<div class="col-md-1">{{prescription.id}}</div>
+				<div class="col-md-3">{{prescription.patient.fullName}}</div>
+				<div class="col-md-3">{{prescription.doctor.fullName}}</div>
+				<div class="col-md-5">
+					<div class="row">
+						<div class="col-md-6"><p class="text-center">{{prescription.createdDate}}</p></div>
+						<div class="col-md-6" ng-hide="prescription.checkOutDate == null">
+							<p class="text-center">{{prescription.checkOutDate}}</p>
+						</div>
+						<div class="col-md-6" ng-show="prescription.checkOutDate == null">
+							<div ng-controller="ModalForPrescription">
+								<button type="button" class="btn btn-default"
+									ng-click="open('sm', prescription.id, prescription.treatment.id, prescription.patient.fullName)">Give out
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="table-summary">
+				<p class="text-left">Total elements: {{bigTotalItems}}</p>
+				<p class="text-left">Page {{bigCurrentPage}} in {{totalPages}} page(s)</p>
+			</div>
+			<pagination class="pagination pagination-sm" ng-change="pageChanged()" boundary-links="true" total-items="bigTotalItems"
+				max-size="maxSize" ng-model="bigCurrentPage" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;"
+				last-text="&raquo;">
+			</pagination>
+		</div>
+	</div>
+</div>

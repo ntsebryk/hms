@@ -1,0 +1,8 @@
+<div ng-class="{'panel-red': responseData.messageCode === 0, 'panel-green': responseData.messageCode === 1}">
+  <div class="modal-header panel-heading">
+    <button type="button" class="close" ng-click="close()">X</button>
+    <h4 class="modal-title">{{responseData.messageDetails}}</h4>
+  </div>
+  <div class="modal-body"><strong ng-show="feedbackData.messageCode === 0"> Error: </strong>{{responseData.message}}</div>
+  <div class="modal-footer panel-footer">Lv-123</div>
+</div>

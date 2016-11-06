@@ -1,0 +1,75 @@
+<!-- ng-controller="PendingUsersController as puc" -->
+<div class="someResponseContent" ng-controller="PendingUsersController" >
+    <div ng-show="newUsers.length">
+        <ul class="list-group" >
+            <li class="list-group-item newUsersByRole" ng-repeat="newUser in newUsers">
+                <div class="row">
+                    <div class="col-md-2">
+                        <img class="pull-left" ng-src="/hospital/resources/custom/images/admin-manager/{{newUser.user.gender}}.png" width="48" height="48" />
+                    </div>
+                    <div class="col-md-10">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <b>{{newUser.user.fullName}}</b>
+                            </div>
+                            <div class="col-md-4">
+                                {{newUser.user.login}}
+                            </div>
+                            <div class="col-md-2 pull-right">
+                                <div class="btn-group btn-group-xs dropdown" ng-controller="ChangeUserStatus">
+                                    <button class="btn btn-default pickExplicitly" type="button" data-toggle="dropdown">
+                                        <span class="fa fa-gears"></span>
+                                    </button>
+                                    <ul id="approoveOptsList" role="menu" class="dropdown-menu pull-middle">
+                                        <li role="presentation" ng-click="setStatus(newUser, 'APPROVED', 'doctor')"><a href="#"><span class="fa fa-check">Aproove</span></a></li>
+                                        <li role="presentation" ng-click="setStatus(newUser, 'REJECTED', 'doctor')"><a href="#"><span class="fa fa-close">Reject</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8" style="font-size:11px">
+                                <span class="fa fa-home" ></span> {{newUser.user.adress}}
+                            </div>
+                            <div class="cold-md-4" style="font-size:11px">
+                                <span class="glyphicon glyphicon-calendar" ></span> {{newUser.user.birthday | date:'mediumDate'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8" style="font-size:11px">
+                                <span class="fa fa-envelope" ></span> {{newUser.user.email}}
+                            </div>
+                            <div class="cold-md-4" style="font-size:11px">
+                                <span class="glyphicon glyphicon-phone" ></span> {{newUser.user.phone}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="row">
+            <div class="col-sm-5">
+                <p class="text-muted pageInfo">
+                    <i>Results <span class="txt-color-darken"><b>{{currentFirst}}</b></span> to <span class="txt-color-darken"><b>{{currentLast}}</b></span> from <span class="txt-color-blue"><b>{{totalElements}}</b></span> total.</i>
+                </p>
+            </div>
+            <div class="col-sm-7 im-righted">
+                <pagination total-items="totalElements"
+                            ng-model="currentPage"
+                            max-size="maxSize"
+                            items-per-page="pageSize"
+                            class="pagination-sm"
+                            boundary-links="true"
+                            ng-change="pageChanged()"
+                            first-text="&laquo;"
+                            last-text="&raquo;"
+                            previous-text="&lt;"
+                            next-text="&gt;">
+                </pagination>
+            </div>
+        </div>
+    </div>
+    <div ng-show="!newUsers.length">
+        No users found!
+    </div>
+</div>
